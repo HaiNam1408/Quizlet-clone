@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Quizlet | Login</title>
+  <link rel="icon" href="https://www.android-user.de/wp-content/uploads/2016/12/icon-quizlet.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel='stylesheet' href='/stylesheets/login.css' />
+</head>
+
+<body>
+  <div class="container">
+    <div class="left">
+      <div class="heading">
+        <h1>Học hành vất vả kết quả ngọt bùi</h1>
+      </div>
+    </div>
+    <div class="right">
+      <div class="form-btn">
+        <a type="button" class="title active btn_regis">
+          <h2>Đăng nhập</h2>
+        </a>
+        <a type="button" class="title btn_login">
+          <h2>Đăng ký</h2>
+        </a>
+      </div>
+      <!-- Register Form -->
+      <div class="form-wrapper">
+        <form id="re_form" class="re_form hide" action="/register" method="post">
+          <div class="regis">
+            <p>Ngày sinh*</p>
+            <div class="date">
+              <span>
+                <label for="day">Ngày</label>
+                <select required id="day"></select>
+              </span>
+              <span>
+                <label for="month">Tháng</label>
+                <select required id="month"></select>
+              </span>
+              <span>
+                <label for="year">Năm</label>
+                <select required id="year"></select>
+              </span>
+            </div>
+            <div class="form_control">
+              <label for="re_email">Email*</label>
+              <i class="fas fa-exclamation-triangle"></i>
+              <input type="email" id="re_email" name="email" required placeholder="Enter email">
+              <small>Error message</small>
+            </div>
+            <div class="form_control">
+              <label for="username">Tên người dùng*</label>
+              <i class="fas fa-exclamation-triangle"></i>
+              <input type="text" id="user_name" name="user_name" required placeholder="Enter your name">
+              <small>Error message</small>
+            </div>
+            <div class="form_control">
+              <label for="re_password">Mật khẩu*</label>
+              <i class="fas fa-exclamation-triangle"></i>
+              <input type="password" id="re_password" name="password" required placeholder="Enter password">
+              <button type="button" onclick="showPass()">
+                <i id="show" class="fas fa-eye"></i>
+                <i id="hide" class="fas fa-eye-slash"></i>
+              </button>
+              <small>Error message</small>
+            </div>
+            <div class="form_control">
+              <label for="re_password2">Xác nhận mật khẩu*</label>
+              <i class="fas fa-exclamation-triangle"></i>
+              <input type="password" id="re_password2" required placeholder="Enter password again">
+              <button type="button" onclick="showPass2()">
+                <i id="show2" class="fas fa-eye"></i>
+                <i id="hide2" class="fas fa-eye-slash"></i>
+              </button>
+              <small>Error message</small>
+            </div>
+            <button class="button" type="submit">Đăng ký</button>
+          </div>
+        </form>
+        <!-- register Form -->
+        <form id="log_form" class="log_form" action="/login" method="post">
+          <div class="form_control">
+            <label for="log_email">Email*</label>
+            <i class="fas fa-exclamation-triangle"></i>
+            <input type="email" id="log_email" name="email" required placeholder="Enter email">
+            <small>Error message</small>
+          </div>
+          <div class="form_control">
+            <label for="log_password">Mật khẩu*</label>
+            <i class="fas fa-exclamation-triangle"></i>
+            <input type="password" id="log_password" name="password" required placeholder="Enter password">
+            <button type="button" onclick="showPass3()">
+              <i id="show3" class="fas fa-eye"></i>
+              <i id="hide3" class="fas fa-eye-slash"></i>
+            </button>
+            <small>Error message</small>
+          </div>
+          <button class="button" type="submit">Đăng Nhập</button>
+        </form>
+      </div>
+
+      <!-- register Form -->
+
+      <!-- login Form -->
+    </div>
+  </div>
+  </div>
+  <!-- script -->
+  <script src="/javascripts/login.js"></script>
+</body>
+
+</html>

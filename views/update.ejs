@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://www.android-user.de/wp-content/uploads/2016/12/icon-quizlet.png" type="image/x-icon">
+    <title> Quizlet | Tạo học phần mới</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="/stylesheets/create.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+</head>
+
+<body>
+
+    <header class="row">
+        <div class="header_left row">
+            <div class="logo"><a href="/"><span>Quizlet</span></a></div>
+
+            <ul class="row">
+                <li><a href="#">Trang chủ</a>
+                    <div class="box box_btn"></div>
+                </li>
+                <li><a href="#">Lời giải chuyên gia</a>
+                    <div class="box"></div>
+                </li>
+                <li><a href="#">Thư viện của bạn</a>
+                    <div class="box"></div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- <div class="search">
+            <input type="text" placeholder="Học phần,...">
+            <i class="bi bi-search"></i>
+        </div> -->
+
+        <div class="user row">
+            <label class="check_box">
+                <input type="checkbox" name="check_box">
+            </label>
+
+            <a href="#" class="user_nav">
+                <img src="<%= account.avatar %>">
+            </a>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>Sửa học phần</h2>
+
+
+        <form action="/user/update-lesson/<%= account._id %>/<%= lesson._id %>" method="post">
+            <div class="face_nav">
+                <div class="face_box" id="face_box1">
+                    <input type="search" name="lesson_name" class="title" value="<%= lesson.lesson_name %>" required
+                        placeholder="Nhập tiêu đề (vd: ''Sinh Học - chương 22: Tiến Hóa'')">
+                </div>
+                <h4>Tiêu đề</h4>
+            </div>
+            <div class="face_nav">
+                <div class="face_box" id="face_box1">
+                    <input type="search" name="description" class="title" value="<%= lesson.description %>"
+                        placeholder="Thêm mô tả...">
+                </div>
+                <h4>Mô tả</h4>
+            </div>
+            <ul class="card">
+                <% lesson.term.forEach((term, index)=> { %>
+                    <li class="card_item">
+                        <div class="card_item__top row">
+                            <span class="card_index">
+                                <%= index + 1 %>
+                            </span>
+                            <div class="delete_card"><i class="bi bi-trash3-fill"></i></div>
+                        </div>
+
+                        <div class="card_item__centent row">
+                            <div class="input_box">
+                                <input name="term" type="search" value="<%= term %>">
+                                <h4>Thuật ngữ</h4>
+                            </div>
+                            <div class="input_box">
+                                <input name="mean" type="search" value="<%= lesson.mean[index] %>">
+                                <h4>Định nghĩa</h4>
+                            </div>
+                            <div class="imager">
+                                <i class="bi bi-image"></i>
+                                <p>hình ảnh</p>
+                            </div>
+                        </div>
+
+                        <div class="imager_btn">
+                            <div id="imager_btn" class="row">
+                                <div class="imager_btn__box">
+                                    <input type="search" name="image" value="<%= lesson.image[index] %>"
+                                        placeholder="Mời bạn nhập link ảnh">
+                                </div>
+                                <button>Tải ảnh lên của riêng bạn</button>
+                            </div>
+                        </div>
+                    </li>
+                    <% }) %>
+            </ul>
+            <div class="cart_footer  row">
+                <div type="button" class="Add_card">Thêm thẻ (+)</div>
+                <button type="submit" class="createACourse">Chỉnh sửa</button>
+            </div>
+        </form>
+
+    </div>
+
+</body>
+<script src="/javascripts/script.js"></script>
+
+</html>

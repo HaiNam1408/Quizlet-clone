@@ -1,0 +1,238 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  height: 100vh;
+}
+:root{
+  --main_color: #3498db; 
+}
+.container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.container .left{
+  background: url(https://ccedu.vn/wordpress/wp-content/uploads/2018/08/h%E1%BB%8Dc-thu%E1%BB%99c-m%C3%B4n-v%C4%83n.png);
+  background-size: cover;
+  overflow: hidden;
+  width: 50%;
+}
+.left .heading{
+  margin-top: 240px;
+  margin-left: 12px;
+  width: 292px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.right{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding: 48px;
+  position: relative;
+  overflow: auto;
+}
+
+/* //start */
+.form{
+  width: 600px;
+  color: rgb(0, 0, 0);
+  border-radius: 5px;
+  margin: auto;
+  position: relative;  
+}
+
+.form-btn{
+  position: relative;
+  display: flex;
+  width: 100%;
+  margin-bottom: 36px;
+}
+
+.btn_login{
+  transform: translate(-14px, 0px);
+}
+
+.right .title{
+  cursor: pointer;
+  width: 170px;
+  height: 60px;
+  border: none;
+  border-bottom: 3px solid;
+  border-right: 3px solid;
+  text-align: center;
+  line-height: 60px;
+  border-bottom-right-radius: 30px;
+  border-top-left-radius: 30px;
+}
+
+.title.active{
+  background-color: var(--main_color);
+  transform: translate(0, -8px);
+}
+
+.form_control{
+  margin-bottom: 10px;
+  width: 100%;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  padding-top: 10px;
+  padding-bottom: 5px;
+  position: relative;
+}
+.form_control label{
+  color: rgb(0, 0, 0);
+  display: block;
+  margin-bottom: 5px;
+  font-size: 18px;
+  font-weight: 500;
+}
+.form_control input{
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+  border: none;
+  background: transparent;
+  outline: none;
+  color: rgb(0, 0, 0);
+}
+
+.form_control small{
+  color:  red;
+  margin-left: 10px;
+  display: none;
+}
+.form_control.error small{
+  display: block;
+}
+.right .button{
+  cursor: pointer;
+  background-color: var(--main_color);
+  border: 2px solid var(--main_color);
+  border-radius: 4px;
+  color: #fff;
+  display: block;
+  font-size: 16px;
+  padding: 10px;
+  margin-top: 30px;
+  width: 100%;
+  transition: 0.4s;
+}
+.right .button:hover{
+  transform: scale(1.1);
+  background-color: white;
+  color: black;
+}
+.form_control .fa-exclamation-triangle{
+  margin-right: 10px;
+  position: absolute;
+  margin-top: 14px;
+  margin-left: -7px;
+  font-size: 10px;
+  color: rgb(255, 0, 0);
+  display: none;
+}
+.form_control .fa-eye, .fa-eye-slash{
+  font-size: 15px;
+}
+.form_control.error .fa-exclamation-triangle{
+  display: block;
+}
+
+.form .re_close:hover{
+  color: red;
+}
+.re_form p{
+  font-size: 17px;
+}
+.re_form .date{
+  width: 100%;
+  display: flex;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 50px;
+  line-height: 40px;
+}
+.re_form .date span{
+  display: block;
+  padding-right: 40px;
+  padding-bottom: 30px;
+  padding-left: 10px;
+}
+.re_form select{
+  margin-left: 10px;
+  border-radius: 3px;
+  font-size: 15px;
+}
+.form_control .fa-eye{
+  display: none;
+}
+.form_control .fa-eye-slash{
+  display: block;
+}
+.form_control button{
+  cursor: pointer;
+  position: absolute;
+  margin-left: 96%;
+  margin-top: -28px;
+  width: 0;
+  height: 0;
+  border: none;
+}
+.register_form .btn_regis{
+  z-index: 2;
+  transition: 0.3s;
+}
+.register_form .down{
+  top: 24px;
+  z-index: 1;
+  background-color: white;
+}
+.register_form .btn_login{
+  left: 144px;
+  top: 24px;
+  z-index: 1;
+  transition: 0.3s;
+  background-color: white;
+}
+.register_form .up{
+  top: 18px;
+  z-index: 2;
+  background-color: var(--main_color);
+}
+.register_form{
+  z-index: 1;
+}
+
+.login_form{
+  position: absolute;
+  margin-top: 72px;
+  height: 565px;
+}
+/* .show{
+  z-index: 2;
+  opacity: 1;
+} */
+.re_form{
+  /* // background-color: red; */
+  /* opacity: 1; */
+  /* // z-index: -10; */
+  z-index: 5;
+}
+.hide{
+  display: none;
+}
+.login_form .form_control{
+  margin-bottom: 50px;
+}
+.login_form #log_form{
+  margin-top: 100px;
+}
+
