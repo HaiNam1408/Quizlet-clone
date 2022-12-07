@@ -1,6 +1,5 @@
 var Account = require('../models/Account')
 var Lesson = require('../models/Lesson')
-var Term = require('../models/Term')
 
 
 const lessonController = {
@@ -44,6 +43,17 @@ const lessonController = {
     updateLesson: (req, res)=>{
         Lesson.findByIdAndUpdate(req.params.lesson, req.body, (error, data)=>{
             res.redirect(`/user/${req.params.account}`)
+        })
+    },
+
+    renderLearnPage: (req, res)=>{
+        Account.findById(req.params.account, (error, accountData)=>{
+            Lesson.findById(req.params.lesson, (error, lessonData)=>{
+                res.render('learn', { 
+                    account: accountData, 
+                    lesson: lessonData
+                })
+            })
         })
     }
 }

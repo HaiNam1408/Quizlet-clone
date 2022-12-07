@@ -20,10 +20,10 @@
 
     <header class="row">
         <div class="header_left row">
-            <div class="logo"><a href="/"><span>Quizlet</span></a></div>
+            <div class="logo"><a href="/user/<%= account.id %>"><span>Quizlet</span></a></div>
 
             <ul class="row">
-                <li><a href="#">Trang chủ</a>
+                <li><a href="/user/<%= account.id %>">Trang chủ</a>
                     <div class="box box_btn"></div>
                 </li>
                 <li><a href="#">Lời giải chuyên gia</a>
@@ -78,11 +78,11 @@
 
                     <div class="card_item__centent row">
                         <div class="input_box">
-                            <input name="term" type="search">
+                            <input name="term" required type="search">
                             <h4>Thuật ngữ</h4>
                         </div>
                         <div class="input_box">
-                            <input name="mean" type="search">
+                            <input name="mean" required type="search">
                             <h4>Định nghĩa</h4>
                         </div>
                         <div class="imager">
@@ -108,11 +108,11 @@
 
                     <div class="card_item__centent row">
                         <div class="input_box">
-                            <input name="term" type="search">
+                            <input name="term" required type="search">
                             <h4>Thuật ngữ</h4>
                         </div>
                         <div class="input_box">
-                            <input name="mean" type="search">
+                            <input name="mean" required type="search">
                             <h4>Định nghĩa</h4>
                         </div>
                         <div class="imager">
@@ -140,6 +140,6 @@
     </div>
 
 </body>
-<script src="/javascripts/script.js"></script>
+<script src="/javascripts/create.js"></script>
 
 </html>

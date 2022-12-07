@@ -6,21 +6,21 @@ const accountController = {
     //register
     registerAccount: async(req, res, next)=>{
         try {
-            //hash password
+            
             const salt = await bcrypt.genSalt(10)
             const hashed = await bcrypt.hash(req.body.password, salt)
-            //create new account
+            
             const newAccount = await new Account({
                 user_name: req.body.user_name,
                 email: req.body.email,
                 password: hashed
             })
-            //save new account into database
+            
             const account = await newAccount.save()
             res.redirect(`/user/${account._id}`)
             
         } catch (error) {
-            res.status(500).json(error)
+            res.status(500).json('Đã có lỗi xảy ra, vui lòng thử lại', error)
         }
     },
 
@@ -29,15 +29,14 @@ const accountController = {
         try {
             console.log(req.body.email)
             const account = await Account.findOne({email: req.body.email})
-            console.log(account)
-            if(!account) res.status(500).json('error')
+            if(!account) res.status(200).json('Tài khoản không tồn tại')
             const validPassword = await bcrypt.compare(req.body.password, account.password)
-            if(!validPassword) res.status(500).json('error')
+            if(!validPassword) res.status(200).json('Mật khẩu sai')
             if(account && validPassword) {
                 res.redirect(`/user/${account._id}`)
             }
         } catch (error) {
-            res.status(500).json(error)
+            res.status(200).json(error, ',vui lòng thử lại')
         }
     },
 

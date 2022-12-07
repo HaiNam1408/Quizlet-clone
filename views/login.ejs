@@ -46,7 +46,8 @@
             <div class="form_control">
               <label for="re_email">Email*</label>
               <i class="fas fa-exclamation-triangle"></i>
-              <input type="email" id="re_email" name="email" required placeholder="Enter email">
+              <input type="email" id="re_email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                placeholder="Enter email">
               <small>Error message</small>
             </div>
             <div class="form_control">
@@ -58,22 +59,24 @@
             <div class="form_control">
               <label for="re_password">Mật khẩu*</label>
               <i class="fas fa-exclamation-triangle"></i>
-              <input type="password" id="re_password" name="password" required placeholder="Enter password">
+              <input type="password" id="re_password" name="password" required pattern=".{6,}"
+                placeholder="Enter password">
               <button type="button" onclick="showPass()">
                 <i id="show" class="fas fa-eye"></i>
                 <i id="hide" class="fas fa-eye-slash"></i>
               </button>
               <small>Error message</small>
             </div>
-            <div class="form_control">
+            <div class="form_control js-re_password">
               <label for="re_password2">Xác nhận mật khẩu*</label>
               <i class="fas fa-exclamation-triangle"></i>
-              <input type="password" id="re_password2" required placeholder="Enter password again">
+              <input type="password" id="re_password2" onchange=checkPassword() required pattern=".{6,}"
+                placeholder="Enter password again">
               <button type="button" onclick="showPass2()">
                 <i id="show2" class="fas fa-eye"></i>
                 <i id="hide2" class="fas fa-eye-slash"></i>
               </button>
-              <small>Error message</small>
+              <small>Password incorrect</small>
             </div>
             <button class="button" type="submit">Đăng ký</button>
           </div>
@@ -83,13 +86,15 @@
           <div class="form_control">
             <label for="log_email">Email*</label>
             <i class="fas fa-exclamation-triangle"></i>
-            <input type="email" id="log_email" name="email" required placeholder="Enter email">
+            <input type="email" id="log_email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+              placeholder="Enter email">
             <small>Error message</small>
           </div>
           <div class="form_control">
             <label for="log_password">Mật khẩu*</label>
             <i class="fas fa-exclamation-triangle"></i>
-            <input type="password" id="log_password" name="password" required placeholder="Enter password">
+            <input type="password" id="log_password" name="password" required pattern=".{6,}"
+              placeholder="Enter password">
             <button type="button" onclick="showPass3()">
               <i id="show3" class="fas fa-eye"></i>
               <i id="hide3" class="fas fa-eye-slash"></i>

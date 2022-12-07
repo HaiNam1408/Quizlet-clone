@@ -13,13 +13,22 @@
     /* màu sắc */
     --col_FFF: #FFFFFF;
     --col_fff: #fff;
-    --col_boder: #282E3E;
-    --col_nen: #0A092D;
+    --col_boder: #e2e2e2;
+    --col_nen: #f6f7fb;
+    --col_element: #ffffff;
+    --col_text: #303545;
+    --col_text2: #ffffff;
+    --col_sub: #939bb4;
+    --col_logo: #4255FF;
+    --col_underline: #a8b1ff;
     --col_button: #4255FF;
+    --col_button2: #3ccfcf;
     --col_search: #2E3856;
+    --col_active: #fecc1f;
 
 
     /* độ trễ */
+    --tr_2s: .2s ease;
     --tr_3s: .3s ease;
     --tr_4s: .4s ease;
     --tr-1s: 1s ease;
@@ -30,6 +39,7 @@
 body {
     font-family: var(--ff-roboto);
     background: var(--col_nen);
+    color: var(--col_text);
 }
 
 .row {
@@ -62,7 +72,7 @@ header {
     width: 100%;
     height: 64px;
     border-bottom: 1px solid var(--col_boder);
-    background: var(--col_nen);
+    background: var(--col_element);
     padding: 0 25px;
     line-height: 64px;
     justify-content: space-between;
@@ -73,7 +83,7 @@ header {
 }
 .header_left .logo span {
     font-size: 30px;
-    color: var(--col_fff);
+    color: var(--col_logo);
     font-weight: 700;
 }
 .header_left ul {
@@ -93,7 +103,7 @@ header {
     left: 0;
     width: 100%;
     height: 4px;
-    background: var(--col_FFF);
+    background: var(--col_underline);
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
     opacity: 0;
@@ -109,14 +119,14 @@ header {
     visibility: visible;
 }
 .header_left ul li a {
-    color: var(--col_fff);
+    color: var(--col_text);
     font-size: 16px;
     font-weight: 700;
 }
 button.create {
     background: var(--col_button);
     font-weight: 700;
-    color: var(--col_fff);
+    color: var(--col_text2);
 }
 
 .search {
@@ -134,23 +144,28 @@ button.create {
     position: absolute;
     top: 0;
     padding-left: 35px;
-    background: var(--col_search);
-    color: var(--col_fff);
+    background: var(--col_nen);
+    color: var(--col_text);
+}
+.search input::placeholder{
+    color: var(--col_sub) !important;
+    font-weight: 700;
+    opacity: .9;
 }
 .search input::placeholder {
     font-size: 14px;
-    color: var(--col_fff);
+    color: var(--col_text2);
 }
 .search i {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     left: 10px;
-    color: var(--col_fff);
+    color: var(--col_text);
     cursor: pointer;
 }
 
-.login-btn{
+/* .login-btn{
     background-color: var(--col_nen);
     color: var(--col_fff);
 }
@@ -158,14 +173,14 @@ button.create {
 .register-btn{
     background-color: var(--col_button);
     color: var(--col_fff);
-}
+} */
 
 .user .check_box {
     display: block;
     width: 60px;
     height: 30px;
     border-radius: 30px;
-    background: var(--col_search);
+    background: var(--col_sub);
     margin-top: 17px;
     position: relative;
 }
@@ -183,14 +198,11 @@ button.create {
 .check_box input {
     opacity: 0;
 }
-.check_box:has(input:checked) {
+/* .check_box:has(input:checked) {
     background-color: #000;
-}
+} */
 .check_box:has(input:checked)::before {  
     left: 32px;
-}
-body:has(input:checked) {
-    background-color: blueviolet;
 }
 .user_nav img {
     width: 40px;
@@ -205,18 +217,19 @@ body:has(input:checked) {
 /* container */
 /*  */
 .container {
-    width: 94%;
+    width: 100%;
     min-height: 1000px;
     height: auto;
     margin: auto;
-    padding: 64px 0;
+    padding: 64px 80px;
 }
 .container h2 {
-    padding: 40px 0 15px 0;
-    color: var(--col_fff);
+    padding: 32px 0 16px 0;
     font-size: 20px;
 }
 .container ul {
+    display: flex;
+    flex-wrap: wrap;
     width: auto;
     min-height: 160px;
     height: auto;
@@ -226,12 +239,14 @@ body:has(input:checked) {
 .container ul li {
     width: calc((100% - 65px) / 4);
     height: 160px;
-    background: var(--col_search);
+    background: var(--col_element);
     border-radius: 6px;
     float: left;
-    margin-right: 15px;
+    margin-right: 16px;
+    margin-bottom: 16px;
     padding: 12px;
     position: relative;
+    box-shadow: 0 0 4px #ccc;
 }
 .container ul li:hover .term_box {
     opacity: 1;
@@ -242,12 +257,12 @@ body:has(input:checked) {
     visibility: visible;
 }
 .container ul li a .term_name {
-    color: var(--col_fff);
+    color: var(--col_text);
     font-size: 20px;
     margin-top: 15px;
 }
 .container ul li a .tern_txt {
-    color: rgba(255, 255, 255, 0.476);
+    color: var(--col_sub);
     font-size: 16px;
 }
 .term_user {
@@ -263,7 +278,7 @@ body:has(input:checked) {
     margin-right: 10px;
 }
 .term_user a span {
-    color: var(--col_fff);
+    color: var(--col_text);
 }
 .term_box {
     position: absolute;
@@ -271,7 +286,7 @@ body:has(input:checked) {
     left: 0;
     width: 100%;
     height: 6px;
-    background: #ffffffa0;
+    background: var(--col_underline);
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
     opacity: 0;
@@ -298,7 +313,7 @@ body:has(input:checked) {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: var(--col_fff);
+    color: var(--col_text);
 }
 .custom .custom_list {
     width: 110px;

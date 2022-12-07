@@ -16,4 +16,6 @@ router.get('/update-page/:account/:lesson', lessonController.renderUpdatePage)
 
 router.post('/update-lesson/:account/:lesson', lessonController.updateLesson);
 
+router.get('/learn-page/:account/:lesson', lessonController.renderLearnPage);
+
 module.exports = router;

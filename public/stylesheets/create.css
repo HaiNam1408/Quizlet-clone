@@ -8,24 +8,6 @@
     text-decoration: none;
 }
 
-:root {
-    /* màu sắc */
-    --col_FFF: #FFFFFF;
-    --col_fff: #fff;
-    --col_boder: #282E3E;
-    --col_nen: #0A092D;
-    --col_button: #4255FF;
-    --col_search: #2E3856;
-
-
-    /* độ trễ */
-    --tr_3s: .3s ease;
-    --tr_4s: .4s ease;
-    --tr-1s: 1s ease;
-
-    /* phông chữ */
-    --ff-roboto: 'Roboto', sans-serif;
-}
 body {
     font-family: var(--ff-roboto);
     background: var(--col_nen);
@@ -39,7 +21,6 @@ body {
 .face_box {
     width: 100%;
     height: 50px;
-    border-bottom: 2px solid var(--col_fff);
 }
 .face_box.open_face_box {
     border-bottom: 6px solid yellow;
@@ -50,15 +31,19 @@ body {
     border: none;
     outline: none;
     background: transparent;
-    color: var(--col_fff);
+    color: var(--col_text);
+    border-bottom: 2px solid var(--col_fff);
     font-size: 20px;
 }
+.face_box input:focus {
+    border-bottom: 3px solid var(--col_active);
+}
 .face_box input::placeholder {
-    color: var(--col_fff);
+    color: var(--col_sub);
     font-size: 18px;
 }
 .face_nav h4 {
-    color: var(--col_fff);
+    color: var(--col_text);
     font-weight: 700;
     margin: 10px 0 20px 0;
 }
@@ -67,12 +52,11 @@ body {
 .card {
     width: 100%;
     height: auto;
-    background: red;
 }
 .card .card_item {
     width: 100%;
     height: auto;
-    background: var(--col_search);
+    background: var(--col_element);
     margin-bottom: 1.5em;
 }
 .card_item__top {
@@ -89,13 +73,13 @@ body {
 }
 .card_item__top span {
     font-size: 22px;
-    color: var(--col_fff);
+    color: var(--col_text);
     font-weight: 600;
     margin-left: 10px;
 }
 .delete_card i {
     font-size: 22px;
-    color: var(--col_fff);
+    color: var(--col_sub);
     transition: var(--tr_3s);
 }
 .delete_card:hover i {
@@ -111,7 +95,6 @@ body {
 .input_box {
     width: 600px;
     height: 50px;
-    border-bottom: 2px solid var(--col_fff);
 }
 .input_box input {
     width: 100%;
@@ -121,19 +104,23 @@ body {
     border: none;
     margin-bottom: 10px;
     font-size: 20px;
-    color: var(--col_fff);
+    color: var(--col_text);
+    border-bottom: 2px solid var(--col_boder);
+}
+.input_box input:focus {
+    border-bottom: 3px solid var(--col_active);
 }
 .input_box h4 {
-    color: var(--col_fff);
+    color: var(--col_text);
     font-size: 18px;
 }
 .imager {
     width: 128px;
     height: 90px;
-    border: 2px dashed var(--col_fff);
+    border: 2px dashed var(--col_boder);
     border-radius: 8px;
     text-align: center;
-    color: var(--col_fff);
+    color: var(--col_text);
     font-size: 16px;
     cursor: pointer;
     transition: var(--tr_3s);
@@ -167,8 +154,13 @@ body {
 .imager_btn__box {
     width: 83%;
     height: 50px;
-    border-bottom: 2px solid var(--col_fff);
+    border-bottom: 2px solid var(--col_boder);
 }
+
+.imager_btn__box:focus {
+    border-bottom: 3px solid var(--col_active);
+}
+
 .imager_btn input {
     width: 100%;
     height: 100%;
@@ -176,7 +168,7 @@ body {
     outline: none;
     border: none;
     background: transparent;
-    color: var(--col_fff);
+    color: var(--col_text);
     font-size: 18px;
 }
 .imager_btn button {
@@ -186,10 +178,10 @@ body {
     margin-left: 2%;
     outline: none;
     border: none;
-    background: var(--col_search);
+    background: var(--col_button2);
     border-radius: 8px;
     font-size: 16px;
-    color: var(--col_fff);
+    color: var(--col_text2);
     font-weight: 700;
     cursor: pointer;
     transition: var(--tr_3s);
@@ -213,8 +205,8 @@ body {
     border-radius: 8px;
     border: none;
     outline: none;
-    background: var(--col_search);
-    color: var(--col_fff);
+    background: var(--col_button);
+    color: var(--col_text2);
     font-size: 18px;
     font-weight: 700;
     cursor: pointer;

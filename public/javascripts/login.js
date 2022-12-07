@@ -141,23 +141,28 @@ function showPass3() {
 }
 
 //Change form
-function toogleForm(){
-    document.querySelectorAll('.form-wrapper form').forEach((form)=>{
-        form.classList.toggle('hide')
-    })
-    document.querySelectorAll('.title').forEach(btn => {
-        btn.classList.toggle('active')
-    })
+function openRegisterForm(){
+    document.querySelector('.form-wrapper .log_form').classList.remove('hide')
+    document.querySelector('.form-wrapper .re_form').classList.add('hide')
+    document.querySelector('.title.btn_regis').classList.add('active')
+    document.querySelector('.title.btn_login').classList.remove('active')
+}
+
+function openLoginForm(){
+    document.querySelector('.form-wrapper .re_form').classList.remove('hide')
+    document.querySelector('.form-wrapper .log_form').classList.add('hide')
+    document.querySelector('.title.btn_login').classList.add('active')
+    document.querySelector('.title.btn_regis').classList.remove('active')
 }
 
 const btnRegister = document.querySelector('.btn_regis')
 const btnLogin = document.querySelector('.btn_login')
 
 btnRegister.onclick = ()=>{
-    toogleForm()
+    openRegisterForm()
 }
 btnLogin.onclick = ()=>{
-    toogleForm()
+    openLoginForm()
 }
 
 //Email
@@ -170,3 +175,16 @@ submit.addEventListener('submit', function() {
         document.querySelector('.form_control').classList.remove('error');
     }
 })
+
+//Check password
+function checkPassword(){
+    let password = document.querySelector('#re_password').value
+    let rePassword = document.querySelector('#re_password2').value
+    let formControl = document.querySelector('.js-re_password')
+
+    if(rePassword !== password){
+        formControl.classList.add('error')
+    } else {
+        formControl.classList.remove('error')
+    }
+}
