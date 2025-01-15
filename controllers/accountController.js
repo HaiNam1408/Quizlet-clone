@@ -20,7 +20,7 @@ const accountController = {
             res.redirect(`/user/${account._id}`)
             
         } catch (error) {
-            res.status(500).json('Đã có lỗi xảy ra, vui lòng thử lại', error)
+            res.status(400).json({ message: 'Đã có lỗi xảy ra, vui lòng thử lại', error: error.message });
         }
     },
 
@@ -36,7 +36,7 @@ const accountController = {
                 res.redirect(`/user/${account._id}`)
             }
         } catch (error) {
-            res.status(200).json(error, ',vui lòng thử lại')
+            res.status(400).json({ message: 'Đã có lỗi xảy ra, vui lòng thử lại', error: error.message });
         }
     },
 
